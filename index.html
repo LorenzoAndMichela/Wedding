@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it-IT">
 <head>
     <title>Michela & Lorenzo | Matrimonio</title>
@@ -12,10 +12,19 @@
 
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        /* CAMBIAMENTO: NUOVA PALETTE COLORI E TIPOGRAFIA */
         html, body {
             scroll-behavior: smooth;
             font-family: 'Montserrat', sans-serif;
-            color: #333;
+            background-color: #FAF9F6; /* Sfondo Panna/Bianco Caldo */
+            color: #444444; /* Testo Grigio Scuro Morbido */
+            font-size: 16px; 
+        }
+
+        .content-section p {
+            font-weight: 300; /* Testo normale più leggero */
+            line-height: 1.6; /* Interlinea migliorata */
         }
 
         .fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
@@ -24,7 +33,7 @@
         /* SEZIONE HOME CON FOTO A SCHERMO INTERO */
         .hero {
             height: 100vh;
-            background-image: url('foto.jpg'); /* La tua foto iniziale */
+            background-image: url('foto.jpg');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -126,7 +135,7 @@
             top: 0;
             width: 260px;
             height: 100vh;
-            background: #fff;
+            background: #FAF9F6; /* Sfondo Menu si adatta al corpo */
             box-shadow: 3px 0 8px rgba(0,0,0,0.3);
             transition: left 0.3s ease;
             z-index: 250;
@@ -142,8 +151,8 @@
             font-size: 1.8em;
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #eee;
-            color: #FF9966;
+            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
+            color: #9B6C6C; /* Nuovo Accento */
         }
 
         .main-nav a {
@@ -151,25 +160,25 @@
             padding: 15px 25px;
             font-size: 1.1em;
             text-decoration: none;
-            color: #FF9966;
-            border-bottom: 1px solid #f1f1f1;
+            color: #9B6C6C; /* Nuovo Accento */
+            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
         }
 
         .content-section {
             padding: 70px 25px;
             max-width: 900px;
             margin: auto;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
         }
 
+        /* TITOLI DELLE SEZIONI CON NUOVO ACCENTO */
         .content-section h2 {
             font-family: 'Playfair Display', serif;
-            color: #FF9966;
+            color: #9B6C6C; 
             font-size: 2.4em;
             margin-bottom: 5px; 
         }
         
-        /* Stile per la data sotto Schedule */
         .content-section p.section-date {
             font-family: 'Montserrat', sans-serif;
             font-weight: 500;
@@ -180,21 +189,22 @@
 
         .content-section h3 {
             font-family: 'Playfair Display', serif;
-            color: #FF9966;
+            color: #9B6C6C; 
             font-size: 1.6em;
             margin-top: 30px;
             margin-bottom: 10px;
         }
         
-        /* Stile specifico per IBAN (Rinominato per Gifts) */
+        /* Stile specifico per IBAN */
         .iban-box {
-            background-color: #f7f7f7;
-            border: 1px solid #eee;
-            padding: 15px;
+            background-color: #f0f0f0; /* Sfondo box leggermente più scuro */
+            border: 1px solid #E0E0E0;
+            padding: 20px;
             margin-top: 15px;
-            font-size: 1.2em; /* Leggermente più grande per l'IBAN */
-            font-family: 'Playfair Display', serif; /* Stile elegante per l'IBAN */
-            color: #333;
+            font-size: 1.2em; 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700;
+            color: #444444; 
             word-break: break-all;
             text-align: center;
         }
@@ -204,15 +214,16 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 40px auto; 
+            margin: 60px auto; /* CAMBIAMENTO: Maggiore margine */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid #E0E0E0; /* CAMBIAMENTO: Bordo delicato */
         }
         
         /* Stile per il testo evidenziato */
         .highlight {
-            font-weight: 500;
-            color: #FF9966;
+            font-weight: 700; /* CAMBIAMENTO: Grassetto più forte */
+            color: #9B6C6C; /* Nuovo Accento */
         }
 
         /* STILI PER L'ICONA A DOPPIO ANELLO */
@@ -222,7 +233,7 @@
             width: 1.2em;
             height: 1.2em;
             fill: none;
-            stroke: #FF9966;
+            stroke: #9B6C6C; /* Nuovo Accento */
             stroke-width: 1.5;
             margin: 0 5px;
         }
