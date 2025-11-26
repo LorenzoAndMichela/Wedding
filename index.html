@@ -13,18 +13,18 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
-        /* CAMBIAMENTO: NUOVA PALETTE COLORI E TIPOGRAFIA */
+        /* PALETTE COLORI ESISTENTE (ACCENTO: #9B6C6C) */
         html, body {
             scroll-behavior: smooth;
             font-family: 'Montserrat', sans-serif;
-            background-color: #FAF9F6; /* Sfondo Panna/Bianco Caldo */
-            color: #444444; /* Testo Grigio Scuro Morbido */
+            background-color: #FAF9F6; 
+            color: #444444; 
             font-size: 16px; 
         }
 
         .content-section p {
-            font-weight: 300; /* Testo normale più leggero */
-            line-height: 1.6; /* Interlinea migliorata */
+            font-weight: 300; 
+            line-height: 1.6; 
         }
 
         .fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
@@ -135,7 +135,7 @@
             top: 0;
             width: 260px;
             height: 100vh;
-            background: #FAF9F6; /* Sfondo Menu si adatta al corpo */
+            background: #FAF9F6; 
             box-shadow: 3px 0 8px rgba(0,0,0,0.3);
             transition: left 0.3s ease;
             z-index: 250;
@@ -151,8 +151,8 @@
             font-size: 1.8em;
             padding: 20px;
             text-align: center;
-            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
-            color: #9B6C6C; /* Nuovo Accento */
+            border-bottom: 1px solid #E0E0E0; 
+            color: #9B6C6C; 
         }
 
         .main-nav a {
@@ -160,18 +160,18 @@
             padding: 15px 25px;
             font-size: 1.1em;
             text-decoration: none;
-            color: #9B6C6C; /* Nuovo Accento */
-            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
+            color: #9B6C6C; 
+            border-bottom: 1px solid #E0E0E0; 
         }
 
         .content-section {
             padding: 70px 25px;
             max-width: 900px;
             margin: auto;
-            border-bottom: 1px solid #E0E0E0; /* Bordo più chiaro */
+            border-bottom: 1px solid #E0E0E0; 
         }
 
-        /* TITOLI DELLE SEZIONI CON NUOVO ACCENTO */
+        /* TITOLI DELLE SEZIONI CON ACCENTO */
         .content-section h2 {
             font-family: 'Playfair Display', serif;
             color: #9B6C6C; 
@@ -197,7 +197,7 @@
         
         /* Stile specifico per IBAN */
         .iban-box {
-            background-color: #f0f0f0; /* Sfondo box leggermente più scuro */
+            background-color: #f0f0f0; 
             border: 1px solid #E0E0E0;
             padding: 20px;
             margin-top: 15px;
@@ -214,16 +214,16 @@
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 60px auto; /* CAMBIAMENTO: Maggiore margine */
+            margin: 60px auto; 
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            border: 1px solid #E0E0E0; /* CAMBIAMENTO: Bordo delicato */
+            border: 1px solid #E0E0E0; 
         }
         
         /* Stile per il testo evidenziato */
         .highlight {
-            font-weight: 700; /* CAMBIAMENTO: Grassetto più forte */
-            color: #9B6C6C; /* Nuovo Accento */
+            font-weight: 700; 
+            color: #9B6C6C; 
         }
 
         /* STILI PER L'ICONA A DOPPIO ANELLO */
@@ -233,9 +233,58 @@
             width: 1.2em;
             height: 1.2em;
             fill: none;
-            stroke: #9B6C6C; /* Nuovo Accento */
+            stroke: #9B6C6C; 
             stroke-width: 1.5;
             margin: 0 5px;
+        }
+        
+        /* STILI PER IL RINGRAZIAMENTO FINALE (AGGIUNTO) */
+        .thank-you-section {
+            text-align: center;
+            padding: 50px 25px 80px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* Stili per il "Grazie" in H2 */
+        .thank-you-section h2 {
+            font-family: 'Playfair Display', serif;
+            color: #9B6C6C; 
+            font-size: 3.5em; 
+            margin-bottom: 5px; 
+        }
+        
+        /* Stile per le firme */
+        .thank-you-section .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em; 
+            color: #9B6C6C; 
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        /* Stili per la nota PS (aggiunti) */
+        .rsvp-note {
+            margin-top: 20px;
+            padding-left: 20px; 
+            font-size: 0.95em;
+        }
+        .rsvp-note ul {
+            list-style-type: none; /* Rimuove i pallini/quadrati di default */
+            padding-left: 0;
+            margin-top: 5px;
+        }
+        .rsvp-note ul li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 5px;
+        }
+        .rsvp-note ul li:before {
+            content: "-"; /* Usa il trattino come elenco */
+            position: absolute;
+            left: 0;
+            color: #9B6C6C; /* Colore accento */
+            font-weight: 500;
         }
 
 
@@ -244,6 +293,8 @@
             .hero-overlay p.date-text { font-size: 1.2em; }
             .hero-overlay { top: 65%; }
             .content-section { padding: 50px 15px; }
+            .thank-you-section h2 { font-size: 2.5em; } 
+            .thank-you-section .signature { font-size: 1.5em; }
         }
     </style>
 </head>
@@ -318,7 +369,24 @@
     <section id="rsvp" class="content-section fade-in" style="border-bottom:none;">
         <h2>RSVP</h2>
         <p>Vi preghiamo di confermare la vostra presenza il prima possibile, entro il <span class="highlight">30 Aprile 2026</span>. <a href="mailto:michela.lorenzo.wedding@email.it">Inviateci una mail qui!</a></p>
+        
+        <div class="rsvp-note">
+            <p style="font-weight: 500; margin-bottom: 5px;">Ps. Si prega di indicare:</p>
+            <ul>
+                <li>eventuale preferenza per menù vegetariano;</li>
+                <li>allergie alimentari.</li>
+            </ul>
+        </div>
+        
     </section>
+
+    <section class="thank-you-section fade-in">
+        <h2>Grazie</h2>
+        <p class="signature">
+            Michela & Lorenzo
+        </p>
+    </section>
+
 
 <script>
 const menuToggle = document.getElementById('menu-toggle');
