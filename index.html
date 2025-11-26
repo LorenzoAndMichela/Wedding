@@ -287,13 +287,13 @@
             font-weight: 500;
         }
         
-        /* STILI PER COUNTDOWN (NUOVO) */
+        /* STILI PER COUNTDOWN */
         .countdown-section {
             padding: 40px 15px;
             max-width: 900px;
             margin: auto;
             text-align: center;
-            background-color: #FAF9F6; /* Mantiene lo stesso sfondo del body */
+            background-color: #FAF9F6; 
             border-bottom: 1px solid #E0E0E0;
         }
         .countdown-title {
@@ -318,14 +318,16 @@
             color: #9B6C6C;
             line-height: 1;
         }
+        /* STILI PER LE ETICHETTE (GIORNI, ORE, MINUTI) - CORSIVO STILIZZATO (Playfair Display, italic) */
         .countdown-unit span.label {
             display: block;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9em;
-            font-weight: 500;
+            font-family: 'Playfair Display', serif; /* Font elegante */
+            font-size: 1.1em; /* Leggermente più grande */
+            font-weight: 400; 
+            font-style: italic; /* CORSIVO */
             color: #777;
             margin-top: 5px;
-            text-transform: uppercase;
+            text-transform: none; /* Normale (non maiuscolo) per abbinarsi al corsivo */
         }
 
 
@@ -363,7 +365,7 @@
     <section id="home" class="hero fade-in">
         <div class="hero-overlay">
             <h1>Michela & Lorenzo</h1>
-            <p class="date-text">Martedì 2 Giugno 2026</p> 
+            <p class="date-text">Lunedì 1 Giugno 2026</p> 
         </div>
     </section>
 
@@ -386,11 +388,11 @@
     </section>
     <section id="schedule" class="content-section fade-in">
         <h2>Schedule</h2>
-        <p class="section-date">Martedì 2 Giugno 2026</p> 
+        <p class="section-date">Lunedì 1 Giugno 2026</p> 
         
         <h3>La Cerimonia e il Ricevimento</h3>
         <p>Siamo felici di celebrare il nostro matrimonio con una <span class="highlight">cerimonia simbolica</span>, seguita subito dopo dal ricevimento, in <span class="highlight">un'unica splendida location</span>.</p>
-        <p>Vi accoglieremo alle <span class="highlight">ore 11:00</span> per la celebrazione, seguita dal pranzo e dai festeggiamenti.</p>
+        <p>Vi accoglieremo alle <span class="highlight">ore 18:00</span> per la celebrazione, seguita dalla cena e dai festeggiamenti.</p>
         
         <p style="margin-top: 20px;">
             <svg class="icon-rings" viewBox="0 0 24 24">
@@ -463,9 +465,9 @@ document.querySelectorAll('.main-nav a').forEach(link => {
 });
 
 
-// LOGICA COUNTDOWN (AGGIUNTA)
-// Data del matrimonio: 2 Giugno 2026, 11:00:00
-const weddingDate = new Date("2026-06-02T11:00:00").getTime();
+// LOGICA COUNTDOWN 
+// Data del matrimonio: 1 Giugno 2026, 18:00:00
+const weddingDate = new Date("2026-06-01T18:00:00").getTime();
 
 const countdownFunction = setInterval(function() {
     const now = new Date().getTime();
