@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it-IT">
 <head>
     <title>Lorenzo & Michela | Matrimonio</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
     <style>
@@ -17,6 +17,8 @@
             font-size: 20px; 
             line-height: 2.2;
             text-align: center;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         .fade-in { opacity: 0; animation: fadeIn 1.2s ease forwards; }
@@ -75,19 +77,33 @@
         h2 { font-family: 'Playfair Display', serif; color: #9B6C6C; font-size: 2.8em; margin-bottom: 40px; font-style: italic; font-weight: 400; }
         h3 { font-family: 'Playfair Display', serif; font-size: 2em; margin-bottom: 25px; font-style: italic; font-weight: 500; }
 
-        /* SEPARATORI */
-        .rings-divider { display: flex; align-items: center; justify-content: center; margin: 40px auto; width: 60%; }
-        .rings-divider::before, .rings-divider::after { content: ""; flex: 1; height: 1px; background: #9B6C6C; opacity: 0.4; }
-        .rings-icon { width: 70px; height: 50px; margin: 0 20px; fill: none; stroke: #9B6C6C; stroke-width: 1.5; }
-
-        /* IMMAGINI */
-        .location-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin: 20px auto 40px auto;
+        /* IMMAGINI FULL SCREEN */
+        .full-width-img {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            margin-bottom: 40px;
             display: block;
+            height: auto;
+        }
+
+        /* IBAN BOX */
+        .iban-box {
+            background:#f1f1f1; 
+            padding:40px 20px; 
+            border-radius:10px; 
+            margin-top:30px;
+        }
+        .iban-text {
+            display: block;
+            letter-spacing: 1px; 
+            font-weight: 700; 
+            font-size: 0.82em;
+            word-break: break-all;
+            margin: 10px 0;
         }
 
         /* RSVP FORM */
@@ -120,9 +136,8 @@
             font-size: 1.1em;
             transition: 0.3s;
         }
-        .rsvp-form button:hover { background-color: #7a5252; }
 
-        .signature { font-family: 'Playfair Display', serif; font-size: 3.5em; color: #9B6C6C; margin-top: 80px; padding-bottom: 10px; font-style: italic; }
+        .signature { font-family: 'Playfair Display', serif; font-size: 3.5em; color: #9B6C6C; margin-top: 80px; padding-bottom: 10px; font-style: italic; line-height: 1.2; }
         
         .designer-credit {
             font-size: 0.6em;
@@ -135,6 +150,8 @@
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5em; }
             h2 { font-size: 2.2em; }
+            .iban-text { font-size: 0.72em; }
+            .section { padding: 60px 15px; }
         }
     </style>
 </head>
@@ -144,12 +161,12 @@
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-label"><span></span></label>
 
-    <nav class="main-nav">
+    <nav class="main-nav" id="nav-links">
         <div style="padding: 40px 20px; font-family: 'Playfair Display'; color: #9B6C6C; font-size: 1.5em; border-bottom: 1px solid #EEE; font-style: italic;">L & M</div>
         <a href="#home">Home</a>
         <a href="#schedule">Schedule</a>
-        <a href="#rsvp">RSVP</a>
         <a href="#gifts">Gifts</a>
+        <a href="#rsvp">RSVP</a>
     </nav>
 
     <section id="home" class="hero">
@@ -159,16 +176,7 @@
     <section class="section fade-in">
         <p style="font-family: 'Playfair Display'; font-style: italic; font-size: 1.8em; color: #9B6C6C; margin-bottom: 0;">Ti aspettiamo il giorno</p>
         <h2 style="font-size: 3.5em; margin-bottom: 0;">1 Giugno 2026</h2>
-        
-        <div class="rings-divider">
-            <svg class="rings-icon" viewBox="0 0 100 60">
-                <path d="M42,15 L52,15 L50,20 L44,20 Z" fill="#9B6C6C" stroke="none" />
-                <circle cx="47" cy="35" r="18" />
-                <circle cx="65" cy="35" r="18" />
-            </svg>
-        </div>
-
-        <div style="font-family: 'Playfair Display'; font-style: italic; color: #9B6C6C; font-size: 2.5em; margin-bottom: 30px;">Mancano...</div>
+        <div style="font-family: 'Playfair Display'; font-style: italic; color: #9B6C6C; font-size: 2.5em; margin: 30px 0;">Mancano...</div>
         <div id="wedding-countdown" style="display: flex; justify-content: center; gap: 40px;">
             <div><span id="days" style="display: block; font-family: 'Playfair Display'; font-size: 3.5em; font-weight: 700; color: #9B6C6C;">00</span><span>Giorni</span></div>
             <div><span id="hours" style="display: block; font-family: 'Playfair Display'; font-size: 3.5em; font-weight: 700; color: #9B6C6C;">00</span><span>Ore</span></div>
@@ -177,59 +185,57 @@
     </section>
 
     <section id="schedule" class="section fade-in">
-        <img src="casale500.jpg" alt="Casale 500" class="location-img">
+        <img src="casale500.jpg" alt="Casale 500" class="full-width-img">
         <h2>Schedule</h2>
         <h3>La Cerimonia e il Ricevimento</h3>
-        <p>Siamo felici di celebrare il nostro matrimonio con una <span class="highlight">cerimonia</span>, seguita subito dopo dal ricevimento, in <span class="highlight">un'unica splendida location</span>.</p>
-        <p>Vi accoglieremo alle <span class="highlight">ore 18:30</span> per la celebrazione, seguita dalla cena e dai festeggiamenti.</p>
-        <p><span class="highlight">Location:</span> Casale 500<br>
-           <span class="highlight">Indirizzo:</span> <a href="https://maps.google.com/?q=Casale+500+Pomezia" target="_blank" style="color: inherit; border-bottom: 1px solid #9B6C6C; text-decoration:none;">Via di Valle Caia, 29, 00071 Pomezia RM</a></p>
-    </section>
-
-    <section id="rsvp" class="section fade-in">
-        <img src="casale5002.jpg" alt="Casale 500" class="location-img">
-        <h2>RSVP</h2>
-        <h3 style="margin-bottom: 40px;">Conferma la tua presenza entro il 1 Maggio 2026</h3>
-        
-        <form action="https://formspree.io/f/mnjbzeyw" method="POST" class="rsvp-form">
-            <label>Nome e Cognome *</label>
-            <input type="text" name="name" placeholder="Scrivi qui..." required>
-            
-            <label>Email *</label>
-            <input type="email" name="email" placeholder="La tua email..." required>
-            
-            <label>Conferma la tua presenza *</label>
-            <select name="attendance" required>
-                <option value="" disabled selected>Scegli un'opzione...</option>
-                <option value="Confermo">Sì, sarò presente!</option>
-                <option value="Non posso">Mi dispiace, non potrò venire</option>
-            </select>
-            
-            <label>Allergie o intolleranze (opzionale)</label>
-            <textarea name="notes" rows="4" placeholder="Segnala qui eventuali necessità alimentari..."></textarea>
-            
-            <button type="submit">Invia Conferma</button>
-        </form>
+        <p>Siamo felici di celebrare il nostro matrimonio con una cerimonia, seguita subito dopo dal ricevimento, in un'unica splendida location.</p>
+        <p>Vi accoglieremo alle ore 18:30 per la celebrazione, seguita dalla cena e dai festeggiamenti.</p>
+        <p>Location: Casale 500<br>
+           Indirizzo: <a href="http://maps.google.com/?q=Casale+500+Pomezia" target="_blank" style="color: inherit; border-bottom: 1px solid #9B6C6C; text-decoration:none;">Via di Valle Caia, 29, 00071 Pomezia RM</a></p>
     </section>
 
     <section id="gifts" class="section fade-in">
+        <img src="casale5002.jpg" alt="Casale 500 Esterno" class="full-width-img">
         <h2>Gifts</h2>
-        <p style="font-weight: 300;">La vostra presenza è ciò che rende speciale questo giorno.<br>
-           Se vorrete aiutarci a costruire un pezzetto del nostro futuro, lo accoglieremo con affetto</p>
-        <div style="background:#f1f1f1; padding:40px; border-radius:10px; margin-top:30px;">
+        <p style="font-weight: 300;">
+            La vostra presenza &egrave; ci&ograve; che rende speciale questo giorno.<br>
+            Se vorrete aiutarci a costruire un pezzetto del nostro futuro, lo accoglieremo con affetto
+        </p>
+        <div class="iban-box">
             <span style="font-style: italic; font-weight: 700;">IBAN:</span> <br> 
-            <span style="letter-spacing: 1px; font-weight: 700;">IT62H0200805046000106894914</span><br>
+            <span class="iban-text">IT62H0200805046000106894914</span>
             <span style="font-size: 0.9em; opacity: 0.8; font-style: italic;">Lorenzo Manni e Michela Morvillo</span>
         </div>
     </section>
 
+    <section id="rsvp" class="section fade-in">
+        <h2>RSVP</h2>
+        <h3 style="margin-bottom: 40px;">Conferma la tua presenza entro il <br> 1 Maggio 2026</h3>
+        <form action="https://formspree.io/f/mnjbzeyw" method="POST" class="rsvp-form">
+            <label>Nome e Cognome *</label>
+            <input type="text" name="name" required>
+            <label>Email *</label>
+            <input type="email" name="email" required>
+            <label>Conferma la tua presenza *</label>
+            <select name="attendance" required>
+                <option value="" disabled selected>Scegli un'opzione...</option>
+                <option value="Confermo">S&igrave;, sar&ograve; presente!</option>
+                <option value="Non posso">Mi dispiace, non potr&ograve; venire</option>
+            </select>
+            <label>Allergie o intolleranze (opzionale)</label>
+            <textarea name="notes" rows="4" placeholder="Segnala qui eventuali necessit&agrave; alimentari..."></textarea>
+            <button type="submit">Invia Conferma</button>
+        </form>
+    </section>
+
     <section class="fade-in">
         <h2 style="margin-top: 100px; font-size: 4em;">Grazie</h2>
-        <div class="signature">Lorenzo & Michela</div>
+        <div class="signature">Lorenzo<br>&<br>Michela</div>
         <div class="designer-credit">Designed by MA</div>
     </section>
 
     <script>
+    // Countdown
     const weddingDate = new Date("2026-06-01T18:30:00").getTime();
     function updateCountdown() {
         const now = new Date().getTime();
@@ -246,6 +252,13 @@
     }
     setInterval(updateCountdown, 1000);
     updateCountdown();
+
+    // CHIUSURA AUTOMATICA MENU
+    document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('menu-toggle').checked = false;
+        });
+    });
     </script>
 </body>
 </html>
